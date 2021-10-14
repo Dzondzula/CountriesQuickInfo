@@ -1,4 +1,4 @@
-Regions = [
+"regions" : [
 	{ "name": "Africa", "code": "AF" },
 	{ "name": "North America", "code": "NA" },
 	{ "name": "Oceania", "code": "OC" },
@@ -9,7 +9,7 @@ Regions = [
 ];
 
 
-Countries = [
+"countries" : [
 	{
 		"name": "Afghanistan",
 		"code": "AF",
