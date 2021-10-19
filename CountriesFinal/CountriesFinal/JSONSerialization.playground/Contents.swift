@@ -2,9 +2,9 @@
 //let session = URLSession.shared
 //let urlString = "https:gist.githubusercontent.com/keeguon/2310008/raw/bdc2ce1c1e3f28f9cab5b4393c7549f38361be4e/countries.json"
 //let url = URL(string:urlString)!
-////note that we’re assigning the return value of dataTask(with:completionHandler:) to the task constant
-//// completion handler is a bit more complicated. It’s a closure that’s executed when the request completes, so when a response has returned from the webserver. This can be any kind of response, including errors, timeouts, 404s, and actual JSON data.
-////closure has three parameters: the response Data object, a URLResponse object, and an Error object. All of these closure parameters are optionals, so they can be nil.
+//note that we’re assigning the return value of dataTask(with:completionHandler:) to the task constant
+// completion handler is a bit more complicated. It’s a closure that’s executed when the request completes, so when a response has returned from the webserver. This can be any kind of response, including errors, timeouts, 404s, and actual JSON data.
+//closure has three parameters: the response Data object, a URLResponse object, and an Error object. All of these closure parameters are optionals, so they can be nil.
 //let task = session.dataTask(with: url) {data,response,error in
 //   if let data = data  {
 //       //data is a Data object, so it has no visual representation yet. We can convert or interpret it as JSON though
