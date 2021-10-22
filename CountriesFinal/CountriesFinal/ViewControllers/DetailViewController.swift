@@ -19,13 +19,12 @@ class DetailViewController: UIViewController,WKNavigationDelegate {
         view.backgroundColor = .white
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Open in maps", style: .plain, target: self, action: #selector(openInMaps))
-        webView.frame = CGRect(x: 64, y: 150, width: 250, height: 150)
+        webView.frame = CGRect(x: 80, y: 150, width: 250, height: 150)
         
         webView.backgroundColor = .blue
         webView.translatesAutoresizingMaskIntoConstraints = false
         
-        webView.layer.borderWidth = 5
-        webView.layer.borderColor = UIColor.red.cgColor
+        
 
         webView.contentMode = .scaleAspectFit
         webView.backgroundColor = .blue
@@ -84,7 +83,7 @@ class DetailViewController: UIViewController,WKNavigationDelegate {
         let label3 = UILabel()
         label3.translatesAutoresizingMaskIntoConstraints = false
         //label3.backgroundColor =
-        label3.text = "Cntinent: \(String(describing: continent))"
+        label3.text = "Continent: \(String(describing: continent))"
         
         label3.sizeToFit()
         

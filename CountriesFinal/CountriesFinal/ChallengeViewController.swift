@@ -1,6 +1,5 @@
 
 import UIKit
-@IBDesignable
 class Challenge: UIViewController {
 
     var scoreLabel: UILabel!
@@ -33,6 +32,7 @@ class Challenge: UIViewController {
         scoreLabel.layer.borderWidth = 1
         scoreLabel.layer.borderColor = UIColor.gray.cgColor
         scoreLabel.sizeToFit()
+        scoreLabel.text = "Score:"
         view.addSubview(scoreLabel)
 //
         questionLabel = UILabel()
@@ -153,7 +153,7 @@ class Challenge: UIViewController {
         DispatchQueue.global().async { [self] in
                     
             if let levelFileURL = Bundle.main.url(forResource: "level11", withExtension: "txt"){
-            if let levelContents = try? String(contentsOf: levelFileURL){//1.pronasli 2.ucitali
+            if let levelContents = try? String(contentsOf: levelFileURL){
                 var lines = levelContents.components(separatedBy: "\n")//split all of our clues into individual lines we can read. Ceo dobijeni sadrzaj kao string text smo podelili u zasebne recenice
                 lines.shuffle()// onda smo te zasebne linije pomesali da ne bi svaki put stajale u istom redu. Svaka linija (recenica) sadrzi odgovor i pojam na koji se odnosi
                 
@@ -161,7 +161,7 @@ class Challenge: UIViewController {
                     let parts = line.components(separatedBy: " —")
                     let country = parts[0]
                     let city = parts [1]
-                // pomocu ovoga indexovali smo svaku zasebnu liniju texta na dva dela rekavsi da delimo liniju pomocu dvotacke ":"(sve pre dvotacke je index[0] dok je sve posle dvotacke index[1])
+                
                     questionCountry.append(country)
                     answerCity.append(city)
                 
@@ -192,6 +192,7 @@ class Challenge: UIViewController {
                     button.transform = CGAffineTransform(scaleX: 1, y: 1)
                 })
             })
+            
         } else {
             score -= 1
            shake(button: button)
@@ -199,15 +200,20 @@ class Challenge: UIViewController {
         
         if questionsAsked < 5{
             askQuestion()
+            
         } else {
-            let ac = UIAlertController(title: "Challenge is over", message: "Come again after 24h", preferredStyle: .alert)
+            for buttonk in [answer1,answer2,answer3,answer4]{
+                buttonk?.isEnabled = false
+                Timer.scheduledTimer(timeInterval: 600, target: self, selector: #selector(enableButton), userInfo: nil, repeats: false)
+            }
+            let ac = UIAlertController(title: "Challenge is over", message: "Come again after 10 minutes", preferredStyle: .alert)
             ac.addAction(UIAlertAction(title: "Back", style: .default){ [weak self] _ in
-                let vc = FirstViewControler()
-                self?.navigationController?.pushViewController(vc, animated: true)
                 
+                self?.navigationController?.popToRootViewController(animated: true)
             })
             present(ac, animated: true)
         }
+        
         if score > highScore{
             highScore = score
             save()
@@ -232,9 +238,15 @@ class Challenge: UIViewController {
     }
     
     @objc func showHighScore(){
-        let ac = UIAlertController(title: " \(highScore)", message: nil, preferredStyle: .alert)
+        let ac = UIAlertController(title: "High score is: \(highScore)", message: nil, preferredStyle: .alert)
         ac.addAction(UIAlertAction(title: "Okay", style: .default, handler: nil))
         save()
         present(ac, animated: true)
+    }
+    
+    @objc func enableButton(){
+        for buttonk in [answer1,answer2,answer3,answer4]{
+            buttonk?.isEnabled = true
+        }
     }
 }

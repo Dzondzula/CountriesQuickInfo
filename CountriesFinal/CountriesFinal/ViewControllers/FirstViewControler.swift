@@ -6,12 +6,13 @@
 //
 
 import UIKit
-
+@IBDesignable
 class FirstViewControler: UIViewController,UITableViewDelegate,UITableViewDataSource,UNUserNotificationCenterDelegate {
     
     let starter  = ["Countries","Challenge"]
     
     let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
+    var counter = 0
  
     @IBOutlet weak var imageView: UIImageView!
     
@@ -84,13 +85,19 @@ class FirstViewControler: UIViewController,UITableViewDelegate,UITableViewDataSo
                 
             navigationController?.pushViewController(vc, animated: true)
             }
-        } else if cell.textLabel?.text == "Challenge"{
+        } else if cell.textLabel?.text == "Challenge" && counter % 2 == 0{
             let vc = Challenge()
                 navigationController?.pushViewController(vc, animated: true)
-            }
+            counter += 1
+        } else {
+            Timer.scheduledTimer(timeInterval: 600, target: self, selector: #selector(counterPlus), userInfo: nil, repeats: false)
+        }
         
         tableView.deselectRow(at: indexPath, animated: true)
         }
+    @objc func counterPlus(){
+        counter += 1
+    }
     
     func registerLocal(){
         let center = UNUserNotificationCenter.current()
