@@ -14,4 +14,4 @@ CQI has a "Challenge" option where user can check his knowladge about capital ci
 
 Also user be getting notifications for next 7 days after installing the app and notification contains question about certain country capital city.
 
-Error: In meanwhile restcountries.com flags link has stopped working so activity indicator just keeps spinning
+### ERROR: In meanwhile restcountries.com flags link has stopped working so activity indicator just keeps spinning
