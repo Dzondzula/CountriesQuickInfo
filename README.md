@@ -1,5 +1,5 @@
 # CountriesQuickInfo
-Learn simple facts about countries fast
+Simple app made with swift using http request to get facts about countries 
 
 ## Example
 
