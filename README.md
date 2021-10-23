@@ -1,5 +1,5 @@
 # CountriesQuickInfo
-Simple app made with swift using http request to get facts about countries 
+App made with swift using http request to get facts about countries 
 
 ## Example
 
@@ -8,7 +8,7 @@ Simple app made with swift using http request to get facts about countries
 
 
 ## Detail
-Simple application for accessing basic facts about Countries such as capital,currency,language...
+Application for accessing basic facts about Countries such as capital,currency,language...
 
 CQI has a "Challenge" option where user can check his knowladge about capital cities. "Challenge" is accessible every 24h.
 
