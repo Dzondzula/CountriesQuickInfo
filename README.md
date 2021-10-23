@@ -1,9 +1,9 @@
 # CountriesQuickInfo
 App made with swift using http request to get facts about countries 
 
-## Example
+## Preview
 
-
+[![](https://raw.githubusercontent.com/Dzondzula/CountriesFinal/CountriesFinal/main/Images/Picture1.png)](Images/Picture.png)
 
 
 
