@@ -6,7 +6,7 @@
 //
 
 import UIKit
-@IBDesignable
+
 class FirstViewControler: UIViewController,UITableViewDelegate,UITableViewDataSource,UNUserNotificationCenterDelegate {
     
     let starter  = ["Countries","Challenge"]
