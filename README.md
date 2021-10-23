@@ -14,10 +14,9 @@ Also user be getting notifications for next 7 days after installing the app and 
 
 ## Preview
 
-[![](https://raw.githubusercontent.com/Dzondzula/CountriesQuickInfo/main/CountriesFinal/CountriesFinal/Images/Picture1.png)](Images/Picture.png)
-[![](https://raw.githubusercontent.com/Dzondzula/CountriesQuickInfo/main/CountriesFinal/CountriesFinal/Images/Picture2.png)](Images/Picture.png)
-[![](https://raw.githubusercontent.com/Dzondzula/CountriesQuickInfo/main/CountriesFinal/CountriesFinal/Images/Picture3.png)](Images/Picture.png)
-[![](https://raw.githubusercontent.com/Dzondzula/CountriesQuickInfo/main/CountriesFinal/CountriesFinal/Images/Picture4.png)](Images/Picture.png)
+<img src="https://raw.githubusercontent.com/Dzondzula/CountriesQuickInfo/main/CountriesFinal/CountriesFinal/Images/Picture1.png" width="250" height="500"> <img src="https://raw.githubusercontent.com/Dzondzula/CountriesQuickInfo/main/CountriesFinal/CountriesFinal/Images/Picture2.png" width="250" height="500">
+<img src="https://raw.githubusercontent.com/Dzondzula/CountriesQuickInfo/main/CountriesFinal/CountriesFinal/Images/Picture3.png" width="250" height="500"> <img src="https://raw.githubusercontent.com/Dzondzula/CountriesQuickInfo/main/CountriesFinal/CountriesFinal/Images/Picture4.png" width="250" height="500">
+
 
 
 
