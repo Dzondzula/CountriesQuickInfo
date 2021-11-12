@@ -22,7 +22,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		C14A9C9827165E3F00D1DCF5 /* JSONSerialization.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = JSONSerialization.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		C14A9C9927170F5D00D1DCF5 /* FirstViewControler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewControler.swift; sourceTree = "<group>"; };
 		C14A9C9B2717B52900D1DCF5 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		C14A9C9D2717B61C00D1DCF5 /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
@@ -93,7 +92,6 @@
 				C18671D3271B2A2A00D8B22D /* ViewControllers */,
 				C14A9CA2271A2E9300D1DCF5 /* ChallengeViewController.swift */,
 				C14A9CA1271A1ACE00D1DCF5 /* JSONData */,
-				C14A9C9827165E3F00D1DCF5 /* JSONSerialization.playground */,
 				C1E5C6852714E9C80071DA7B /* Main.storyboard */,
 				C1E5C6882714E9CA0071DA7B /* Assets.xcassets */,
 				C1E5C68A2714E9CA0071DA7B /* LaunchScreen.storyboard */,
