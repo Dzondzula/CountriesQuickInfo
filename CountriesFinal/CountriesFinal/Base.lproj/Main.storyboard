@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="sFt-Er-xqp">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -122,6 +121,7 @@
         <!--Navigation Controller-->
         <scene sceneID="Kuo-NR-iuH">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wg3-iT-7Ti" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="sFt-Er-xqp" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Ixq-mC-VZS">
@@ -133,7 +133,6 @@
                         <segue destination="ti4-MW-d61" kind="relationship" relationship="rootViewController" id="Ahr-Pe-cuX"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="wg3-iT-7Ti" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-791.304347826087" y="-38.169642857142854"/>
         </scene>

@@ -3,6 +3,9 @@ import UIKit
 import Foundation
 
 
+struct Country : Codable{
+    var countries:[CountriesFinal]
+}
 
 struct CountriesFinal: Codable{
     var name: String

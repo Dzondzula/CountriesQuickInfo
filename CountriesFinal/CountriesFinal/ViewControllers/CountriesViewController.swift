@@ -2,7 +2,7 @@
 import UIKit
 import WebKit
 class CountriesViewController: UITableViewController,UISearchBarDelegate{
-   
+    
     var countriess = [CountriesFinal] ()
     var state = [CountriesFinal] ()
   
@@ -19,7 +19,7 @@ class CountriesViewController: UITableViewController,UISearchBarDelegate{
         performSelector(inBackground: #selector(fetchJSON), with: nil)
           
         let cqiimage = UIImageView(image: UIImage(named: "CQI"))
-    
+        
         self.navigationItem.titleView?.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
         self.navigationItem.titleView = cqiimage
       
@@ -86,6 +86,8 @@ class CountriesViewController: UITableViewController,UISearchBarDelegate{
         }
         }
         self.tableView.reloadData()
+        
+        
     }
 }
 
