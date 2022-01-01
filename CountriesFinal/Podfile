@@ -1,0 +1,12 @@
+
+ platform :ios, '14.0'
+
+target 'CountriesFinal' do
+  
+  pod 'Alamofire', '~>5.5'
+  
+  use_frameworks!
+
+  # Pods for CountriesFinal
+
+end
