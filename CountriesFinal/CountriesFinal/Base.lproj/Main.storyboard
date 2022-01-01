@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="sFt-Er-xqp">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -46,22 +45,11 @@
                 <view contentMode="scaleToFill" id="DcE-dK-xKp">
                     <rect key="frame" x="0.0" y="0.0" width="150" height="33"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <subviews>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Inline-Logo" translatesAutoresizingMaskIntoConstraints="NO" id="MoG-qF-lD4">
-                            <rect key="frame" x="0.0" y="0.0" width="150" height="33"/>
-                        </imageView>
-                    </subviews>
                     <viewLayoutGuide key="safeArea" id="jrr-cN-xdB"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <constraints>
-                        <constraint firstAttribute="trailing" secondItem="MoG-qF-lD4" secondAttribute="trailing" id="7PQ-5g-OJ3"/>
-                        <constraint firstItem="MoG-qF-lD4" firstAttribute="top" secondItem="DcE-dK-xKp" secondAttribute="top" id="apa-kA-Qdu"/>
-                        <constraint firstItem="MoG-qF-lD4" firstAttribute="leading" secondItem="DcE-dK-xKp" secondAttribute="leading" id="hHB-nc-M47"/>
-                        <constraint firstAttribute="bottom" secondItem="MoG-qF-lD4" secondAttribute="bottom" id="qbz-Xu-WLt"/>
-                    </constraints>
                 </view>
             </objects>
-            <point key="canvasLocation" x="824.63768115942037" y="-25.446428571428569"/>
+            <point key="canvasLocation" x="835" y="-38"/>
         </scene>
         <!--First View Controler-->
         <scene sceneID="uSs-j0-M7I">
@@ -139,7 +127,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Inline-Logo" width="300" height="100"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

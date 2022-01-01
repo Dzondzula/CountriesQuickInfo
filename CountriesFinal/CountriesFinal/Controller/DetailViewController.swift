@@ -20,14 +20,8 @@ class DetailViewController: UIViewController,WKNavigationDelegate {
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Open in maps", style: .plain, target: self, action: #selector(openInMaps))
         webView.frame = CGRect(x: 80, y: 150, width: 250, height: 150)
-        
-        webView.backgroundColor = .blue
         webView.translatesAutoresizingMaskIntoConstraints = false
-        
-        
-
         webView.contentMode = .scaleAspectFit
-        webView.backgroundColor = .blue
         self.view.addSubview(webView)
         
         self.webView.addSubview(self.spinner)//first we need to add subview then make center or something
@@ -41,7 +35,8 @@ class DetailViewController: UIViewController,WKNavigationDelegate {
         guard let detailItem = detailItem else {
             return
         }
-        let pictureURL = URL(string: detailItem.flag)!
+        let lowerCode = detailItem.code.lowercased()
+        let pictureURL = URL(string: "https://flagpedia.net/data/flags/w580/\(lowerCode).png")!
 
         let label1 = UILabel()
         label1.translatesAutoresizingMaskIntoConstraints = false
@@ -133,7 +128,7 @@ class DetailViewController: UIViewController,WKNavigationDelegate {
         spinner.stopAnimating()
         print("Unable to load flag")
     }
-    @objc func openInMaps(){
+    @objc func openInMaps(){//Copy paste
         CLGeocoder().geocodeAddressString((detailItem?.name)!, completionHandler: {(placemarks, error) in
 
                 if error != nil {
