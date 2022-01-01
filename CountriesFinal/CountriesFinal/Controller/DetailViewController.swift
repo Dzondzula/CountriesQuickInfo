@@ -20,14 +20,8 @@ class DetailViewController: UIViewController,WKNavigationDelegate {
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Open in maps", style: .plain, target: self, action: #selector(openInMaps))
         webView.frame = CGRect(x: 80, y: 150, width: 250, height: 150)
-        
-        
         webView.translatesAutoresizingMaskIntoConstraints = false
-        
-        
-
         webView.contentMode = .scaleAspectFit
-        webView.backgroundColor = .blue
         self.view.addSubview(webView)
         
         self.webView.addSubview(self.spinner)//first we need to add subview then make center or something

@@ -94,7 +94,8 @@ class Challenge: UIViewController {
            
             
             questionLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor,constant: 80),
-            questionLabel.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor,constant: 50),
+            questionLabel.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor,constant: 25),
+            questionLabel.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor,constant: 25),
             questionLabel.widthAnchor.constraint(equalToConstant: 300),
             questionLabel.heightAnchor.constraint(equalToConstant: 60),
             
@@ -198,9 +199,8 @@ class Challenge: UIViewController {
        case noDataAvailable
        case canNotProcessData
     }
-    func askQuestion(){
-        
-        DispatchQueue.global().async { [self] in
+ func askQuestion(){
+        DispatchQueue.global().async { [ self] in
         
          Cindex = Int.random(in: 0..<countriess.count)
             
@@ -216,7 +216,6 @@ class Challenge: UIViewController {
                  }
                   choices.shuffle()
               }
-        
             print("All choices \(choices)")
             for (index,value) in choices.enumerated(){
           if value == Cindex{
@@ -278,11 +277,11 @@ class Challenge: UIViewController {
                     buttonk?.isUserInteractionEnabled = false
            
                 }
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5){ [self] in
-                    for buttonk in [self.answer1,self.answer2,self.answer3,self.answer4]{
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5){ [ self] in
+                    for buttonk in [answer1,answer2,answer3,answer4]{
                         buttonk?.isUserInteractionEnabled = true
                     }
-                    self.askQuestion()
+                    askQuestion()
                     
                 }
                 

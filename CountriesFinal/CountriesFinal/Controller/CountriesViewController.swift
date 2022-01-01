@@ -9,12 +9,12 @@ class CountriesViewController: UITableViewController,UISearchBarDelegate{
     @IBOutlet weak var searchBar: UISearchBar!
     
    
-    weak var delegate : FirstViewControler!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
       
         searchBar.placeholder = "Search countries.."
-        searchBar.scopeButtonTitles = ["All","Europe", "Asia", "Africa","Oceania", "America"]
+        //searchBar.scopeButtonTitles = ["All","Europe", "Asia", "Africa","Oceania", "America"]
         searchBar.delegate = self
         performSelector(inBackground: #selector(fetchJSON), with: nil)
           
@@ -33,19 +33,19 @@ class CountriesViewController: UITableViewController,UISearchBarDelegate{
         // completion handler is a closure that’s executed when the request completes, so when a response has returned from the webserver. This can be any kind of response, including errors, timeouts, 404s, and actual JSON data.
         //closure has three parameters: the response Data object, a URLResponse object, and an Error object. All of these closure parameters are optionals, so they can be nil.
             DispatchQueue.global(qos: .userInitiated).async {
-                [self] in
+                
             //Data tasks send and receive data with URLSessionDataTask, by using NSData objects. They’re the most common for webservice requests, for example when working with JSON.
-                session.dataTask(with: url) {[self]data,response,error in
+                session.dataTask(with: url) {data,response,error in
             if let data = data {
                 if let decodedResponse = try?
                     JSONDecoder().decode(Country.self, from: data) {
                     // we have good data – go back to the main thread
-                    DispatchQueue.main.async {
+                    DispatchQueue.main.async {[weak self] in
                         // update our UI
-                        countriess = decodedResponse.countries
-                        state = countriess
+                        self?.countriess = decodedResponse.countries
+                        self?.state = self!.countriess
                         
-                        tableView.reloadData()
+                        self?.tableView.reloadData()
                     }
                     // everything is good, so we can exit
                     return
@@ -63,10 +63,9 @@ class CountriesViewController: UITableViewController,UISearchBarDelegate{
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Country", for: indexPath)
         let countri = state[indexPath.row]
-        
-        cell.textLabel?.text = countri.name
-        
-        
+        var content = cell.defaultContentConfiguration()
+        content.text = countri.name
+        cell.contentConfiguration = content
         return cell
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
