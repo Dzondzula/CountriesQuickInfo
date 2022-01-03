@@ -1,5 +1,6 @@
 
 import UIKit
+import Alamofire
 class Challenge: UIViewController {
 
     var countriess = [CountriesFinal]()
@@ -155,22 +156,44 @@ class Challenge: UIViewController {
         if let savedData = defaults.object(forKey: "highScore") as? Int{
             self.highScore = savedData
         }
-        fetch { [weak self]result in
-              switch result{
-              case . failure(let error):
-                  print(error)
-              case .success(let holidays):
-                  self?.countriess = holidays
-                 
-              }
-            self?.askQuestion()
+        let urlString = "https://raw.githubusercontent.com/Dzondzula/Dzondzula.github.io/main/Globus.json"
+     
+        
+        AF.request(urlString,method: .get).responseDecodable(of: [CountriesFinal].self) { (responseData) in
+            
+            switch responseData.result{
+            case .success:
+                             
+                self.countriess = responseData.value!
+                
+            case .failure:
+                print("Error")
+            }
+        }
+        
+        
+        
+        
+//        AF.request( urlString,method: .get).response {  (responseData) in
+//            guard let data = responseData.data else {return}
+//                do {
+//                    let decoded = try JSONDecoder().decode(Country.self, from: data)
+//
+//                    self.countriess =  decoded.countries
+//
+//                } catch let error as NSError{
+//                    print("Error \(error.localizedDescription)")
+//                }
+//            self.askQuestion()
+//            }
+            
         }
        
         //performSelector(inBackground: #selector(fetch), with: nil)
         
         
         
-    }
+    
     func fetch(completion: @escaping (Result<[CountriesFinal], CountryError>)-> Void){
     let urlString = "https://raw.githubusercontent.com/Dzondzula/Dzondzula.github.io/main/Globus.json"
     //"ttp://api.countrylayer.com/v2/all?access_key=88e5f402e6864cc63ff8378ee100f32b"

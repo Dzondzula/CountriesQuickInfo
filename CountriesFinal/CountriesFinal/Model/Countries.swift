@@ -3,11 +3,11 @@ import UIKit
 import Foundation
 
 
-struct Country : Codable{
+struct Country : Decodable{
     var countries:[CountriesFinal]
 }
 
-struct CountriesFinal: Codable{
+struct CountriesFinal: Decodable{
     var name: String
     var code: String
     var capital: String
@@ -17,11 +17,11 @@ struct CountriesFinal: Codable{
     var flag : String
 }
 
-struct Language : Codable{
+struct Language : Decodable{
     var name : String
 }
 
-struct CurrencyCode : Codable{
+struct CurrencyCode : Decodable{
     var code: String
     var name: String
 }
